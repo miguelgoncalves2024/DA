@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="ProjectUWP.views.User.ClientSignIn"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjectUWP.views.User"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="new User(client)" FontSize="25"/>
+            <CommandBar Grid.Row="1">
+                <AppBarButton Label="Ok" Icon="Accept"  Click="AppBarButton_Click"/>
+
+            </CommandBar>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <TextBox Header="Name" Text="{x:Bind userViewModel.newClient.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Header="Address" Text="{x:Bind userViewModel.newClient.Address,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Header="CardNumber" Text="{x:Bind userViewModel.newClient.CardNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Header="Password" Text="{x:Bind userViewModel.newClient.Password,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Header="PhoneNumber" Text="{x:Bind userViewModel.newClient.PhoneNumber,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                
+                
+                <!--<TextBox Header="id" Text="{x:Bind CategoryViewModel.Category.Id,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>-->
+            </StackPanel>
+
+        </Grid>
+
+
+
+    </Grid>
+</Page>
